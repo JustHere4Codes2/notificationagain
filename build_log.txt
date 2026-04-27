@@ -1,0 +1,86 @@
+
+> build
+> nuxt build
+
+┌  [36mBuilding Nuxt for production...[39m
+│
+●  [32mNuxt [1m4.4.2[22m[39m[90m (with [39m[90mNitro [1m2.13.3[22m[39m[90m, Vite [1m7.3.2[22m[39m[90m and Vue [1m3.5.32[22m[39m[90m)[39m
+│
+●  Nitro preset: [36mnode-server[39m
+[36mℹ[39m Building client...
+[36mℹ[39m [36mvite v7.3.2 [32mbuilding client environment for production...[36m[39m
+
+[43m[30m WARN [39m[49m [33m[plugin nuxt:module-preload-polyfill] Sourcemap is likely to be incorrect: a plugin (nuxt:module-preload-polyfill) was used to transform files, but didn't generate a sourcemap for the transformation. Consult the plugin documentation for help[39m
+
+[36mℹ[39m transforming...
+[36mℹ[39m [32m✓[39m 134 modules transformed.
+[36mℹ[39m rendering chunks...
+[36mℹ[39m computing gzip size...
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[32mmanifest.json                      [39m[1m[2m  1.91 kB[22m[1m[22m[2m │ gzip:  0.42 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/toastcontainer.CNZijtU9.css  [39m[1m[2m  0.24 kB[22m[1m[22m[2m │ gzip:  0.16 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/toasts.BOaAiKgH.css          [39m[1m[2m  0.84 kB[22m[1m[22m[2m │ gzip:  0.41 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/entry.41poGJak.css           [39m[1m[2m  1.00 kB[22m[1m[22m[2m │ gzip:  0.43 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/error-500.DBWf9FGj.css       [39m[1m[2m  1.91 kB[22m[1m[22m[2m │ gzip:  0.73 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[35m_nuxt/error-404.C-Ezrlz-.css       [39m[1m[2m  2.43 kB[22m[1m[22m[2m │ gzip:  0.86 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/CVnHponI.js                  [39m[1m[2m  0.33 kB[22m[1m[22m[2m │ gzip:  0.24 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/CuTfdxGH.js                  [39m[1m[2m  0.44 kB[22m[1m[22m[2m │ gzip:  0.32 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/CN0oamPi.js                  [39m[1m[2m  1.12 kB[22m[1m[22m[2m │ gzip:  0.59 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/10xASFSf.js                  [39m[1m[2m  3.48 kB[22m[1m[22m[2m │ gzip:  1.56 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/Bwkt_i_5.js                  [39m[1m[2m  9.10 kB[22m[1m[22m[2m │ gzip:  3.68 kB[22m
+[36mℹ[39m [2m../node_modules/.cache/nuxt/.nuxt/dist/client/[22m[36m_nuxt/LJ_6BVVG.js                  [39m[1m[2m172.48 kB[22m[1m[22m[2m │ gzip: 65.47 kB[22m
+[36mℹ[39m [32m✓ built in 3.98s[39m
+[32m✔[39m Client built in 4057ms
+[36mℹ[39m Building server...
+[36mℹ[39m [36mvite v7.3.2 [32mbuilding ssr environment for production...[36m[39m
+[36mℹ[39m transforming...
+[36mℹ[39m [32m✓[39m 76 modules transformed.
+[36mℹ[39m rendering chunks...
+[36mℹ[39m [32m✓ built in 1.64s[39m
+[32m✔[39m Server built in 1656ms
+[90m[[90mnitro[90m][39m [32m✔[39m Generated public [36m.output/public[39m
+[90m[[90mnitro[90m][39m [36mℹ[39m Building Nuxt Nitro server (preset: [36mnode-server[39m, compatibility date: [36m2025-07-15[39m)
+(node:4928) [DEP0155] DeprecationWarning: Use of deprecated trailing slash pattern mapping "./" in the "exports" field module resolution of the package at F:\notificationagain\node_modules\@vue\shared\package.json imported from F:\notificationagain\node_modules\@nuxt\nitro-server\dist\runtime\templates\error-500.mjs. Mapping specifiers ending in "/" is no longer supported.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+[90m[[90mnitro[90m][39m [32m✔[39m Nuxt Nitro server built
+[90m  ├─ .output/server/chunks/_/error-500.mjs (5.09 kB)[39m[90m (2.07 kB gzip)[39m
+[90m  ├─ .output/server/chunks/_/error-500.mjs.map (182 B)[39m[90m (154 B gzip)[39m
+[90m  ├─ .output/server/chunks/_/nitro.mjs (161 kB)[39m[90m (39.9 kB gzip)[39m
+[90m  ├─ .output/server/chunks/_/nitro.mjs.map (2.79 kB)[39m[90m (708 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/client.precomputed.mjs (5.04 kB)[39m[90m (759 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/client.precomputed.mjs.map (188 B)[39m[90m (150 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/composables-DxBB1YeQ.mjs (732 B)[39m[90m (392 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/composables-DxBB1YeQ.mjs.map (197 B)[39m[90m (161 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-404-BsHtU5mf.mjs (15.1 kB)[39m[90m (4.54 kB gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-404-BsHtU5mf.mjs.map (193 B)[39m[90m (161 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-404-styles.DuDrf-v0.mjs (2.72 kB)[39m[90m (986 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-404-styles.DuDrf-v0.mjs.map (317 B)[39m[90m (188 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-500-hPRe4EoP.mjs (4.82 kB)[39m[90m (1.98 kB gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-500-hPRe4EoP.mjs.map (193 B)[39m[90m (161 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-500-styles.8IYEHzz6.mjs (2.19 kB)[39m[90m (860 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/error-500-styles.8IYEHzz6.mjs.map (317 B)[39m[90m (193 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/server.mjs (41.3 kB)[39m[90m (10.9 kB gzip)[39m
+[90m  ├─ .output/server/chunks/build/server.mjs.map (217 B)[39m[90m (159 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/styles.mjs (1.74 kB)[39m[90m (453 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/styles.mjs.map (164 B)[39m[90m (142 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toastcontainer-c4mLTXx9.mjs (1.5 kB)[39m[90m (688 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toastcontainer-c4mLTXx9.mjs.map (203 B)[39m[90m (162 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toastcontainer-styles.C16aWjY9.mjs (532 B)[39m[90m (295 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toastcontainer-styles.C16aWjY9.mjs.map (332 B)[39m[90m (195 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/ToastItem-styles.DAOxcVaV.mjs (772 B)[39m[90m (406 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/ToastItem-styles.DAOxcVaV.mjs.map (317 B)[39m[90m (191 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toasts-dCvOXoUf.mjs (1.86 kB)[39m[90m (781 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toasts-dCvOXoUf.mjs.map (187 B)[39m[90m (157 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toasts-styles.BcVe3ZFZ.mjs (1.09 kB)[39m[90m (540 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/toasts-styles.BcVe3ZFZ.mjs.map (308 B)[39m[90m (189 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/ToastStack-styles.DjMd0F1x.mjs (773 B)[39m[90m (354 B gzip)[39m
+[90m  ├─ .output/server/chunks/build/ToastStack-styles.DjMd0F1x.mjs.map (320 B)[39m[90m (191 B gzip)[39m
+[90m  ├─ .output/server/chunks/routes/renderer.mjs (17.2 kB)[39m[90m (5.6 kB gzip)[39m
+[90m  ├─ .output/server/chunks/routes/renderer.mjs.map (845 B)[39m[90m (273 B gzip)[39m
+[90m  ├─ .output/server/chunks/virtual/_virtual_spa-template.mjs (94 B)[39m[90m (100 B gzip)[39m
+[90m  ├─ .output/server/chunks/virtual/_virtual_spa-template.mjs.map (90 B)[39m[90m (98 B gzip)[39m
+[90m  ├─ .output/server/index.mjs (1.67 kB)[39m[90m (737 B gzip)[39m
+[90m  └─ .output/server/package.json (851 B)[39m[90m (356 B gzip)[39m
+[36mΣ Total size:[39m 2.1 MB (528 kB gzip)
+[90m[[90mnitro[90m][39m [32m✔[39m You can preview this build using [36mnode .output/server/index.mjs[39m
+│
+└  ✨ Build complete!
