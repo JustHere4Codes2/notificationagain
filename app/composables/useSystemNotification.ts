@@ -1,4 +1,4 @@
-import { ref } from 'vue'
+import { ref, onScopeDispose } from 'vue'
 
 export function useSystemNotification() {
   const supported = ref<boolean>(
@@ -8,6 +8,28 @@ export function useSystemNotification() {
   const permission = ref<NotificationPermission>(
     supported.value ? Notification.permission : 'denied'
   )
+
+  // Keep permission in sync if the user changes it in browser settings
+  if (supported.value) {
+    const status = Notification.permission
+
+    navigator.permissions
+      .query({ name: 'notifications' })
+      .then((status) => {
+        const sync = () => {
+          permission.value = Notification.permission
+        }
+
+        status.addEventListener('change', sync)
+
+        onScopeDispose(() => {
+          status.removeEventListener('change', sync)
+        })
+      })
+      .catch(() => {
+        // navigator.permissions not available in all browsers — silent fallback
+      })
+  }
 
   async function requestPermission(): Promise<NotificationPermission> {
     if (!supported.value) {
@@ -28,12 +50,11 @@ export function useSystemNotification() {
   function notify(
     title: string,
     options?: NotificationOptions
-  ): boolean {
-    if (!supported.value) return false
-    if (permission.value !== 'granted') return false
+  ): Notification | null {
+    if (!supported.value) return null
+    if (permission.value !== 'granted') return null
 
-    new Notification(title, options)
-    return true
+    return new Notification(title, options)
   }
 
   return {

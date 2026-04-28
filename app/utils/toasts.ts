@@ -1,4 +1,4 @@
-type ToastPosition = "top-right" | "top-left" | "bottom-right" | "bottom-left"
+type ToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'
 type ToastType = 'info' | 'success' | 'warning' | 'error'
 
 export interface ToastOptions {
@@ -30,6 +30,7 @@ const DEFAULT_OPTIONS: Required<Omit<ToastOptions, 'duration'>> = {
 
 export default class Toast {
   private el: HTMLDivElement
+  private closeBtn?: HTMLButtonElement
   private durationEl?: HTMLDivElement
   private options: Required<Omit<ToastOptions, 'duration'>>
   private rafId?: number
@@ -54,22 +55,32 @@ export default class Toast {
 
     this.el = document.createElement('div')
     this.el.className = `toast toast--${this.options.type}`
-    
-    // Create content wrapper
-    const contentWrapper = document.createElement('div')
-    contentWrapper.className = 'toast__content'
-    contentWrapper.textContent = this.options.text
-    this.el.appendChild(contentWrapper)
 
-    // Create duration display if enabled
+    // Text
+    const textEl = document.createElement('div')
+    textEl.className = 'toast__text'
+    textEl.textContent = this.options.text
+    this.el.appendChild(textEl)
+
+    // Duration display
     if (this.options.showDuration && this.options.autoClose !== false) {
       this.durationEl = document.createElement('div')
       this.durationEl.className = 'toast__duration'
       this.el.appendChild(this.durationEl)
     }
 
-    // Initialize progress immediately
+    // Close button
+    if (this.options.canClose) {
+      this.closeBtn = document.createElement('button')
+      this.closeBtn.className = 'toast__close'
+      this.closeBtn.textContent = '✕'
+      this.closeBtn.setAttribute('aria-label', 'Close notification')
+      this.el.appendChild(this.closeBtn)
+    }
+
+    // Progress bar
     if (this.options.showProgress && this.options.autoClose !== false) {
+      this.el.classList.add('progress')
       this.el.style.setProperty('--progress', '1')
     }
 
@@ -91,8 +102,11 @@ export default class Toast {
   }
 
   private bindEvents() {
-    if (this.options.canClose) {
-      this.el.addEventListener('click', this.remove)
+    if (this.options.canClose && this.closeBtn) {
+      this.closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation()
+        this.remove()
+      })
     }
 
     if (this.options.pauseOnHover) {
@@ -157,19 +171,15 @@ export default class Toast {
     if (this.removed) return
     this.removed = true
 
-    if (this.rafId) {
-      cancelAnimationFrame(this.rafId)
-    }
+    if (this.rafId) cancelAnimationFrame(this.rafId)
 
     this.el.classList.remove('show')
-
     const parent = this.el.parentElement
 
     this.el.addEventListener(
       'transitionend',
       () => {
         this.el.remove()
-
         if (parent && parent.children.length === 0) {
           parent.remove()
         }
@@ -191,13 +201,13 @@ export default class Toast {
       this.el.removeEventListener('mouseleave', this.unpause)
     }
 
-    if (this.options.canClose) {
-      this.el.removeEventListener('click', this.remove)
+    if (this.options.canClose && this.closeBtn) {
+      this.closeBtn.removeEventListener('click', this.remove)
     }
   }
 }
 
-function getContainer(position: ToastPosition) {
+function getContainer(position: ToastPosition): HTMLDivElement {
   const selector = `.toast-container[data-position="${position}"]`
   let container = document.querySelector<HTMLDivElement>(selector)
 
